@@ -4,10 +4,12 @@ public static class Program
 {
     private static void Main(string[] args)
     {
-        var students = StudentGenerator.Generator(120);
-        for (var i = 0; i < 120; ++i)
+        Console.WriteLine("Please input the number of students by ENTER:");
+        int stuNum = Convert.ToInt32(Console.ReadLine());
+        var students = StudentGenerator.Generator(stuNum);
+        foreach (var student in students)
         {
-            students[i].SayNumber();
+            student.SayNumber();
         }
     }
 }
