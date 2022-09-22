@@ -18,42 +18,33 @@ internal class Student
 
     public string FizzBuzzJudge(int num)
     {
-       // var num = _studentId;
-
         if (num % 3 == 0 && num % 5 == 0 && num % 7 == 0)
         {
-            //Console.WriteLine("{0, 3}:  {1}", num, FizzBuzz.FizzBuzzWhizz);
             return FizzBuzz.FizzBuzzWhizz.ToString();
         }
         else if (num % 3 == 0 && num % 5 == 0)
         {
-            //Console.WriteLine("{0, 3}:  {1}", num, FizzBuzz.FizzBuzz);
             return FizzBuzz.FizzBuzz.ToString();
         }
         else if (num % 3 == 0 && num % 7 == 0)
         {
-           // Console.WriteLine("{0, 3}:  {1}", num, FizzBuzz.FizzWhizz);
-           return FizzBuzz.FizzWhizz.ToString();
+            return FizzBuzz.FizzWhizz.ToString();
         }
         else if (num % 5 == 0 && num % 7 == 0)
         {
-           // Console.WriteLine("{0, 3}:  {1}", num, FizzBuzz.BuzzWhizz);
-           return FizzBuzz.BuzzWhizz.ToString();
+            return FizzBuzz.BuzzWhizz.ToString();
         }
         else if (num % 3 == 0)
         {
-            //Console.WriteLine("{0, 3}:  {1}", num, FizzBuzz.Fizz);
             return FizzBuzz.Fizz.ToString();
         }
         else if (num % 5 == 0)
         {
-           // Console.WriteLine("{0, 3}:  {1}", num, FizzBuzz.Buzz);
-           return FizzBuzz.Buzz.ToString();
+            return FizzBuzz.Buzz.ToString();
         }
         else if (num % 7 == 0)
         {
-           // Console.WriteLine("{0, 3}:  {1}", num, FizzBuzz.Whizz);
-           return FizzBuzz.Whizz.ToString();
+            return FizzBuzz.Whizz.ToString();
         }
         else
         {
