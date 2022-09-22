@@ -26,6 +26,30 @@ public class FizzBuzzWhizzTest
         Assert.Equal( "FizzBuzzWhizz",stu.IncludeNum(stuId7));
         Assert.Equal( "121",stu.IncludeNum(stuId8));
     }
+
+    [Fact]
+    public void Should_Return_Correct_String_When_Num_Is_Multiple_Of_3_5_7()
+    {
+        int stuId1 = 3;
+        int stuId2 = 5;
+        int stuId3 = 7;
+        int stuId4 = 15;
+        int stuId5 = 21;
+        int stuId6 = 35;
+        int stuId7 = 105;
+
+        Student stu = new Student();
+        
+        Assert.Equal( "Fizz",stu.FizzBuzzJudge(stuId1));
+        Assert.Equal( "Buzz",stu.FizzBuzzJudge(stuId2));
+        Assert.Equal( "Whizz",stu.FizzBuzzJudge(stuId3));
+        Assert.Equal( "FizzBuzz",stu.FizzBuzzJudge(stuId4));
+        Assert.Equal( "FizzWhizz",stu.FizzBuzzJudge(stuId5));
+        Assert.Equal( "BuzzWhizz",stu.FizzBuzzJudge(stuId6));
+        Assert.Equal( "FizzBuzzWhizz",stu.FizzBuzzJudge(stuId7));
+    }
+    
+    
     
     
 }
