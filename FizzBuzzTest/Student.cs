@@ -11,6 +11,11 @@ internal class Student
         _studentId = studentId;
     }
 
+    public Student()
+    {
+        
+    }
+
     public string FizzBuzzJudge(int num)
     {
        // var num = _studentId;
