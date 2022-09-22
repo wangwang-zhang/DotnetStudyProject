@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace FizzBuzz;
+namespace FizzBuzzTest;
 
 internal class Student
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace FizzBuzz;
+namespace FizzBuzzWhizz;
 
 static class Program
 {
