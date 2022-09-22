@@ -67,7 +67,6 @@ internal class Student
             str.Append(FizzBuzz.Whizz);
         if (str.Length == 0)
             str.Append(num);
-        //  Console.WriteLine("{0, 3}:  {1}", num, str.ToString());
         return str.ToString();
     }
 

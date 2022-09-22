@@ -48,8 +48,15 @@ public class FizzBuzzWhizzTest
         Assert.Equal( "BuzzWhizz",stu.FizzBuzzJudge(stuId6));
         Assert.Equal( "FizzBuzzWhizz",stu.FizzBuzzJudge(stuId7));
     }
-    
-    
+
+    [Fact]
+    public void Should_Generator_Students_List_Of_Correct_Length()
+    {
+        int stuCount = 10;
+        var students = StudentGenerator.Generator(stuCount);
+        Assert.Equal(stuCount, students.Count);
+        Assert.IsType<List<Student>>(students);
+    }
     
     
 }
