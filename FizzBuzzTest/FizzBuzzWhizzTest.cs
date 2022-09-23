@@ -3,50 +3,39 @@ namespace FizzBuzzTest;
 
 public class FizzBuzzWhizzTest
 {
-    [Fact]
-    public void Should_Return_Correct_String_When_Include_3_5_7_Or_Not()
+    
+    [Theory]
+    [InlineData(new int[]{13, 15, 17, 135, 137, 157, 357, 121},
+                new string[]{"Fizz", "Buzz", "Whizz", "FizzBuzz", "FizzWhizz", "BuzzWhizz", "FizzBuzzWhizz", "121"})]
+    public void Should_Return_Correct_String_When_Include_3_5_7_Or_Not(int[] stuIds, string[] expectedStr)
     {
-        int stuId1 = 13;
-        int stuId2 = 15;
-        int stuId3 = 17;
-        int stuId4 = 135;
-        int stuId5 = 137;
-        int stuId6 = 157;
-        int stuId7 = 357;
-        int stuId8 = 121;
-        
+
         Student stu = new Student();
         
-        Assert.Equal( "Fizz",stu.IncludeNum(stuId1));
-        Assert.Equal( "Buzz",stu.IncludeNum(stuId2));
-        Assert.Equal( "Whizz",stu.IncludeNum(stuId3));
-        Assert.Equal( "FizzBuzz",stu.IncludeNum(stuId4));
-        Assert.Equal( "FizzWhizz",stu.IncludeNum(stuId5));
-        Assert.Equal( "BuzzWhizz",stu.IncludeNum(stuId6));
-        Assert.Equal( "FizzBuzzWhizz",stu.IncludeNum(stuId7));
-        Assert.Equal( "121",stu.IncludeNum(stuId8));
+        Assert.Equal( expectedStr[0],stu.IncludeNum(stuIds[0]));
+        Assert.Equal( expectedStr[1],stu.IncludeNum(stuIds[1]));
+        Assert.Equal( expectedStr[2],stu.IncludeNum(stuIds[2]));
+        Assert.Equal( expectedStr[3],stu.IncludeNum(stuIds[3]));
+        Assert.Equal( expectedStr[4],stu.IncludeNum(stuIds[4]));
+        Assert.Equal( expectedStr[5],stu.IncludeNum(stuIds[5]));
+        Assert.Equal( expectedStr[6],stu.IncludeNum(stuIds[6]));
+        Assert.Equal( expectedStr[7],stu.IncludeNum(stuIds[7]));
     }
 
-    [Fact]
-    public void Should_Return_Correct_String_When_Num_Is_Multiple_Of_3_5_7()
+    [Theory]
+    [InlineData(new int[]{3, 5, 7, 15, 21, 35, 105},
+        new string[]{"Fizz", "Buzz", "Whizz", "FizzBuzz", "FizzWhizz", "BuzzWhizz", "FizzBuzzWhizz"})]
+    public void Should_Return_Correct_String_When_Num_Is_Multiple_Of_3_5_7(int[] stuIds, string[] expectedStr)
     {
-        int stuId1 = 3;
-        int stuId2 = 5;
-        int stuId3 = 7;
-        int stuId4 = 15;
-        int stuId5 = 21;
-        int stuId6 = 35;
-        int stuId7 = 105;
-
         Student stu = new Student();
         
-        Assert.Equal( "Fizz",stu.FizzBuzzJudge(stuId1));
-        Assert.Equal( "Buzz",stu.FizzBuzzJudge(stuId2));
-        Assert.Equal( "Whizz",stu.FizzBuzzJudge(stuId3));
-        Assert.Equal( "FizzBuzz",stu.FizzBuzzJudge(stuId4));
-        Assert.Equal( "FizzWhizz",stu.FizzBuzzJudge(stuId5));
-        Assert.Equal( "BuzzWhizz",stu.FizzBuzzJudge(stuId6));
-        Assert.Equal( "FizzBuzzWhizz",stu.FizzBuzzJudge(stuId7));
+        Assert.Equal(expectedStr[0],stu.FizzBuzzJudge(stuIds[0]));
+        Assert.Equal(expectedStr[1],stu.FizzBuzzJudge(stuIds[1]));
+        Assert.Equal(expectedStr[2],stu.FizzBuzzJudge(stuIds[2]));
+        Assert.Equal(expectedStr[3],stu.FizzBuzzJudge(stuIds[3]));
+        Assert.Equal(expectedStr[4],stu.FizzBuzzJudge(stuIds[4]));
+        Assert.Equal(expectedStr[5],stu.FizzBuzzJudge(stuIds[5]));
+        Assert.Equal(expectedStr[6],stu.FizzBuzzJudge(stuIds[6]));
     }
 
     [Fact]
@@ -57,6 +46,5 @@ public class FizzBuzzWhizzTest
         Assert.Equal(stuCount, students.Count);
         Assert.IsType<List<Student>>(students);
     }
-    
-    
+
 }

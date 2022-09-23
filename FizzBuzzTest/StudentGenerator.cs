@@ -4,11 +4,11 @@ internal static class StudentGenerator
 {
     public static List<Student> Generator(int count)
     {
-        List<Student> students = new List<Student>();
+        List<Student> studentsLists = new List<Student>();
         for (int i = 1; i <= count; ++i)
         {
-            students.Add(new Student(i));
+            studentsLists.Add(new Student(i));
         }
-        return students;
+        return studentsLists;
     }
 }
