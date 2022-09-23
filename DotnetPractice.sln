@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsTest", "GenericsTest\GenericsTest.csproj", "{5C185141-FFFE-44C8-A229-01D154D5410E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendsFun", "ExtendsFun\ExtendsFun.csproj", "{0E7FEA77-5BE5-4514-82DE-6375B232246A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{5C185141-FFFE-44C8-A229-01D154D5410E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C185141-FFFE-44C8-A229-01D154D5410E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C185141-FFFE-44C8-A229-01D154D5410E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7FEA77-5BE5-4514-82DE-6375B232246A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7FEA77-5BE5-4514-82DE-6375B232246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7FEA77-5BE5-4514-82DE-6375B232246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7FEA77-5BE5-4514-82DE-6375B232246A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
