@@ -1,4 +1,5 @@
 ﻿
+
 namespace FizzBuzz;
 
 static class Program
