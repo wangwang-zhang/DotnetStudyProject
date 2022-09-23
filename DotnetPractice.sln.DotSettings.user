@@ -3,5 +3,8 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=906000ab_002D0b59_002D47d6_002Da23f_002D1c9265bc72fd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::9B7650E0-756C-41B7-8B1D-B8D950B9086E::net6.0::FizzBuzzTest.FizzBuzzWhizzTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::5C185141-FFFE-44C8-A229-01D154D5410E::net6.0::GenericsTest.GenericsTest.Should_Return_Corresponding_Type&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::5C185141-FFFE-44C8-A229-01D154D5410E::net6.0::GenericsTest.GenericsTest.Should_Return_Correct_Value&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::5C185141-FFFE-44C8-A229-01D154D5410E::net6.0::GenericsTest.GenericsTest.Should_Use_Correct_Type_Based_On_Generics_Constraint&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
