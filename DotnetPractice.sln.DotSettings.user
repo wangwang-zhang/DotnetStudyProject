@@ -6,5 +6,8 @@
     &lt;TestId&gt;xUnit::5C185141-FFFE-44C8-A229-01D154D5410E::net6.0::GenericsTest.GenericsTest.Should_Return_Corresponding_Type&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::5C185141-FFFE-44C8-A229-01D154D5410E::net6.0::GenericsTest.GenericsTest.Should_Return_Correct_Value&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::5C185141-FFFE-44C8-A229-01D154D5410E::net6.0::GenericsTest.GenericsTest.Should_Use_Correct_Type_Based_On_Generics_Constraint&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::12E9871A-212D-42A4-B6BF-83586CF7AB1A::net6.0::ExtendsFunTest.ExtendsTest.Should_Remove_duplicate_String_In_List&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::12E9871A-212D-42A4-B6BF-83586CF7AB1A::net6.0::ExtendsFunTest.ExtendsTest.Should_Remove_Duplicate_IntValue_In_List&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::12E9871A-212D-42A4-B6BF-83586CF7AB1A::net6.0::ExtendsFunTest.ExtendsTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
