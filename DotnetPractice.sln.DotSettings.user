@@ -9,5 +9,6 @@
     &lt;TestId&gt;xUnit::12E9871A-212D-42A4-B6BF-83586CF7AB1A::net6.0::ExtendsFunTest.ExtendsTest.Should_Remove_duplicate_String_In_List&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::12E9871A-212D-42A4-B6BF-83586CF7AB1A::net6.0::ExtendsFunTest.ExtendsTest.Should_Remove_Duplicate_IntValue_In_List&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::12E9871A-212D-42A4-B6BF-83586CF7AB1A::net6.0::ExtendsFunTest.ExtendsTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::6F930EB1-B51F-4684-AF39-C70F6DDB33F3::net6.0::StudentInformationTest.StudentInfoTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

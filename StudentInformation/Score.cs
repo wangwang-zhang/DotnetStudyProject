@@ -1,4 +1,4 @@
-namespace StudentInfoTest;
+namespace StudentInformation;
 
 public class Score
 {

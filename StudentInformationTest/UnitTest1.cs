@@ -1,4 +1,6 @@
-namespace StudentInfoTest;
+using StudentInformation;
+
+namespace StudentInformationTest;
 
 public class StudentInfoTest
 {
