@@ -25,4 +25,19 @@ public class StudentInfoTest
         Assert.True(res);
         Assert.Empty(stuLists);
     }
+
+    [Fact]
+    public void Should_Be_Able_To_Update_List_Of_StudentInfo()
+    {
+        List<StudentInfo> stuLists = new List<StudentInfo>();
+        StudentInfo stuInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
+        StudentInfo stuInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
+        stuLists.Add(stuInfoOne);
+        stuLists.Add(stuInfoTwo);
+
+        stuLists[0].StuName = "Amy";
+        StudentInfo expectedStuInfo = new StudentInfo(1, "Amy", 1, "Male", 15);
+       
+        Assert.Equal("Amy",stuLists[0].StuName);
+    }
 }
