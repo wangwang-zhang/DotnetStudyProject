@@ -1,5 +1,3 @@
-
-
 namespace ExtendsFun;
 
 public static class MyExtensions
@@ -7,7 +5,7 @@ public static class MyExtensions
     public static List<T> RemoveDuplication<T>(this List<T> list)
     {
         var listArray = list.ToArray();
-        for (int i = 0; i < list.Count; i++)
+        for (int i = 0; i < listArray.Length; i++)
         {
             int count = list.Count(elem => Equals(elem, listArray[i]));
             if (count > 1)
