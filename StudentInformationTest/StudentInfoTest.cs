@@ -8,11 +8,11 @@ public class StudentInfoTest
     public void Should_Be_Able_To_Add_StudentInfo_To_List()
     {
         StudentInfo studentInfo = new StudentInfo();
-        List<StudentInfo> stuLists = new List<StudentInfo>();
+        List<StudentInfo> studentLists = new List<StudentInfo>();
         
-        stuLists.Add(studentInfo);
+        studentLists.Add(studentInfo);
         
-        Assert.Equal(studentInfo, stuLists[0]);
+        Assert.Equal(studentInfo, studentLists[0]);
 
     }
 
@@ -31,16 +31,16 @@ public class StudentInfoTest
     [Fact]
     public void Should_Be_Able_To_Update_List_Of_StudentInfo()
     {
-        List<StudentInfo> stuLists = new List<StudentInfo>();
+        List<StudentInfo> studentLists = new List<StudentInfo>();
         StudentInfo studentInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
         StudentInfo studentInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
-        stuLists.Add(studentInfoOne);
-        stuLists.Add(studentInfoTwo);
+        studentLists.Add(studentInfoOne);
+        studentLists.Add(studentInfoTwo);
 
-        stuLists[0].StudentName = "Amy";
+        studentLists[0].StudentName = "Amy";
         StudentInfo expectedStuInfo = new StudentInfo(1, "Amy", 1, "Male", 15);
        
-        Assert.Equal("Amy",stuLists[0].StudentName);
+        Assert.Equal("Amy",studentLists[0].StudentName);
     }
     [Fact]
     public void Should_Be_Able_To_Query_StudentInfo_In_List()
@@ -63,20 +63,20 @@ public class StudentInfoTest
     {
         Dictionary<int, Score> stuDictionaries = new Dictionary<int, Score>();
         
-        StudentInfo stuInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
-        StudentInfo stuInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
-        StudentInfo stuInfoThree = new StudentInfo(3, "Dave", 2, "Female", 15);
+        StudentInfo studentInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
+        StudentInfo studentInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
+        StudentInfo studentInfoThree = new StudentInfo(3, "Dave", 2, "Female", 15);
         
         Score scoreOne = new Score(1, 50, 60, 70);
         Score scoreTwo = new Score(2, 55, 65, 80);
         Score scoreThree = new Score(3, 56, 50, 90);
         
         List<StudentInfo> studentInfos = new List<StudentInfo>();
-        studentInfos.Add(stuInfoOne);
-        studentInfos.Add(stuInfoTwo);
-        studentInfos.Add(stuInfoThree);
+        studentInfos.Add(studentInfoOne);
+        studentInfos.Add(studentInfoTwo);
+        studentInfos.Add(studentInfoThree);
         
-        stuDictionaries.Add(stuInfoOne.StudentId,scoreOne);
+        stuDictionaries.Add(studentInfoOne.StudentId,scoreOne);
         stuDictionaries.Add(scoreTwo.StudentId,scoreTwo);
         stuDictionaries.Add(scoreThree.StudentId,scoreThree);
 
