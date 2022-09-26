@@ -10,7 +10,7 @@ public class StudentInfoTest
         
         stuLists.Add(studentInfo);
         
-        Assert.Equal(stuLists[0], studentInfo);
+        Assert.Equal(studentInfo, stuLists[0]);
 
     }
 
@@ -18,40 +18,40 @@ public class StudentInfoTest
     public void Should_Be_Able_To_Delete_StudentInfo_In_Lists()
     {
         StudentInfo studentInfo = new StudentInfo();
-        List<StudentInfo> stuLists = new List<StudentInfo>();
-        stuLists.Add(studentInfo);
-        bool res = stuLists.Remove(studentInfo);
+        List<StudentInfo> studentLists = new List<StudentInfo>();
+        studentLists.Add(studentInfo);
+        bool res = studentLists.Remove(studentInfo);
         
         Assert.True(res);
-        Assert.Empty(stuLists);
+        Assert.Empty(studentLists);
     }
 
     [Fact]
     public void Should_Be_Able_To_Update_List_Of_StudentInfo()
     {
         List<StudentInfo> stuLists = new List<StudentInfo>();
-        StudentInfo stuInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
-        StudentInfo stuInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
-        stuLists.Add(stuInfoOne);
-        stuLists.Add(stuInfoTwo);
+        StudentInfo studentInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
+        StudentInfo studentInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
+        stuLists.Add(studentInfoOne);
+        stuLists.Add(studentInfoTwo);
 
-        stuLists[0].StuName = "Amy";
+        stuLists[0].StudentName = "Amy";
         StudentInfo expectedStuInfo = new StudentInfo(1, "Amy", 1, "Male", 15);
        
-        Assert.Equal("Amy",stuLists[0].StuName);
+        Assert.Equal("Amy",stuLists[0].StudentName);
     }
     [Fact]
     public void Should_Be_Able_To_Query_StudentInfo_In_List()
     {
-        List<StudentInfo> stuLists = new List<StudentInfo>();
-        StudentInfo stuInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
-        StudentInfo stuInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
-        StudentInfo stuInfoThree = new StudentInfo(3, "Dave", 2, "Female", 15);
-        stuLists.Add(stuInfoOne);
-        stuLists.Add(stuInfoTwo);
-        stuLists.Add(stuInfoThree);
+        List<StudentInfo> studentLists = new List<StudentInfo>();
+        StudentInfo studentInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
+        StudentInfo studentInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
+        StudentInfo studentInfoThree = new StudentInfo(3, "Dave", 2, "Female", 15);
+        studentLists.Add(studentInfoOne);
+        studentLists.Add(studentInfoTwo);
+        studentLists.Add(studentInfoThree);
 
-        List<StudentInfo> studentInfos = stuLists.FindAll(item =>  item.StuClass == 2);
+        List<StudentInfo> studentInfos = studentLists.FindAll(item =>  item.StudentClass == 2);
 
         Assert.Equal(2,studentInfos.Count);
     }
@@ -74,9 +74,9 @@ public class StudentInfoTest
         studentInfos.Add(stuInfoTwo);
         studentInfos.Add(stuInfoThree);
         
-        stuDictionaries.Add(stuInfoOne.StuId,scoreOne);
-        stuDictionaries.Add(scoreTwo.StuId,scoreTwo);
-        stuDictionaries.Add(scoreThree.StuId,scoreThree);
+        stuDictionaries.Add(stuInfoOne.StudentId,scoreOne);
+        stuDictionaries.Add(scoreTwo.StudentId,scoreTwo);
+        stuDictionaries.Add(scoreThree.StudentId,scoreThree);
 
         HashSet<double> classOne = new HashSet<double>();
         if (classOne == null) throw new ArgumentNullException(nameof(classOne));
@@ -84,9 +84,9 @@ public class StudentInfoTest
 
         foreach (var item in stuDictionaries)
         {
-            StudentInfo? studentInfo = studentInfos.Find(stu => stu.StuId == item.Key);
+            StudentInfo? studentInfo = studentInfos.Find(stu => stu.StudentId == item.Key);
             if (studentInfo != null)
-                switch (studentInfo.StuClass)
+                switch (studentInfo.StudentClass)
                 {
                     case 1:
                         classOne.Add(item.Value.English + item.Value.Math + item.Value.Physics);
