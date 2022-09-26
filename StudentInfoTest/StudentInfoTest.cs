@@ -40,4 +40,19 @@ public class StudentInfoTest
        
         Assert.Equal("Amy",stuLists[0].StuName);
     }
+    [Fact]
+    public void Should_Be_Able_To_Query_StudentInfo_In_List()
+    {
+        List<StudentInfo> stuLists = new List<StudentInfo>();
+        StudentInfo stuInfoOne = new StudentInfo(1, "Tom", 1, "Male", 15);
+        StudentInfo stuInfoTwo = new StudentInfo(2, "Lucas", 2, "Female", 16);
+        StudentInfo stuInfoThree = new StudentInfo(3, "Dave", 2, "Female", 15);
+        stuLists.Add(stuInfoOne);
+        stuLists.Add(stuInfoTwo);
+        stuLists.Add(stuInfoThree);
+
+        List<StudentInfo> studentInfos = stuLists.FindAll(item =>  item.StuClass == 2);
+
+        Assert.Equal(2,studentInfos.Count);
+    }
 }
