@@ -1,10 +1,11 @@
+using System.Collections.ObjectModel;
 using LINQ;
 
 namespace LINQTest;
 
 public class LinqTest
 {
-    readonly IList<Student> _studentLists = new List<Student>()
+    readonly Collection<Student> _studentLists = new Collection<Student>()
     {
         new Student() { StudentID = 1, StudentName = "Amy", Age = 15, CourseID = 1 },
         new Student() { StudentID = 2, StudentName = "Bob", Age = 16, CourseID = 1 },
@@ -12,7 +13,14 @@ public class LinqTest
         new Student() { StudentID = 4, StudentName = "Dave", Age = 16, CourseID = 2 },
         new Student() { StudentID = 5, StudentName = "Easton", Age = 16, CourseID = 3 },
     };
-    
+
+    private readonly Collection<Course> _courseLists = new Collection<Course>()
+    {
+        new Course() { CourseID = 1, CourseName = "Math" },
+        new Course() { CourseID = 2, CourseName = "Biology" },
+        new Course() { CourseID = 3, CourseName = "English" }
+    };
+
     [Fact]
     public void Should_Return_Correct_Results_Group_By_Age()
     {
@@ -58,5 +66,30 @@ public class LinqTest
         
         var expectedStudentNameArray = new string[] { "Amy", "Cindy" };
         Assert.Equal(expectedStudentNameArray, students.ToArray());
+    }
+
+    [Fact]
+    public void Should_Join_StudentLists_And_CourseLists_By_CourseID()
+    {
+        var joinResults = from student in _studentLists
+            join course in _courseLists
+                on student.CourseID equals course.CourseID
+            select new
+            {
+                student.StudentName,
+                courseName = course.CourseName
+            };
+        
+        Assert.Equal( "Amy", joinResults.ToArray()[0].StudentName);
+        Assert.Equal( "Math", joinResults.ToArray()[0].courseName);
+        Assert.Equal( "Bob", joinResults.ToArray()[1].StudentName);
+        Assert.Equal( "Math", joinResults.ToArray()[1].courseName);
+        Assert.Equal( "Cindy", joinResults.ToArray()[2].StudentName);
+        Assert.Equal( "Biology", joinResults.ToArray()[2].courseName);
+        Assert.Equal( "Dave", joinResults.ToArray()[3].StudentName);
+        Assert.Equal( "Biology", joinResults.ToArray()[3].courseName);
+        Assert.Equal( "Easton", joinResults.ToArray()[4].StudentName);
+        Assert.Equal( "English", joinResults.ToArray()[4].courseName);
+
     }
 }
