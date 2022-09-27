@@ -12,5 +12,6 @@
     &lt;TestId&gt;xUnit::6F930EB1-B51F-4684-AF39-C70F6DDB33F3::net6.0::StudentInformationTest.StudentInfoTest&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::69F3E6D8-334F-4414-92F6-12B982D3F732::net6.0::LINQTest.LINQTest.Should_Return_Correct_Results_GroupBy_Age&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::69F3E6D8-334F-4414-92F6-12B982D3F732::net6.0::LINQTest.LinqTest.Should_Return_Correct_Results_Ordered_By_Age_From_Small_To_Big&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::69F3E6D8-334F-4414-92F6-12B982D3F732::net6.0::LINQTest.LinqTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
