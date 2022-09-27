@@ -48,6 +48,15 @@ public class LinqTest
         var expectedStudentNameArray = new string[] { "Bob", "Dave", "Easton", "Amy", "Cindy" };
         Assert.Equal(expectedStudentNameArray, orderedResults.ToArray());
     }
-    
-    
+
+    [Fact]
+    public void Should_Return_Students_Whose_Age_Is_15()
+    {
+        var students = from student in _studentLists
+            where student.Age == 15
+            select student.StudentName;
+        
+        var expectedStudentNameArray = new string[] { "Amy", "Cindy" };
+        Assert.Equal(expectedStudentNameArray, students.ToArray());
+    }
 }
