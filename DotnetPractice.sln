@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInformation", "Stude
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInformationTest", "StudentInformationTest\StudentInformationTest.csproj", "{6F930EB1-B51F-4684-AF39-C70F6DDB33F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{AB280DFE-A454-4C83-8BCC-5517DCF0D7F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQTest", "LINQTest\LINQTest.csproj", "{69F3E6D8-334F-4414-92F6-12B982D3F732}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +58,13 @@ Global
 		{6F930EB1-B51F-4684-AF39-C70F6DDB33F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F930EB1-B51F-4684-AF39-C70F6DDB33F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F930EB1-B51F-4684-AF39-C70F6DDB33F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB280DFE-A454-4C83-8BCC-5517DCF0D7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB280DFE-A454-4C83-8BCC-5517DCF0D7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB280DFE-A454-4C83-8BCC-5517DCF0D7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB280DFE-A454-4C83-8BCC-5517DCF0D7F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F3E6D8-334F-4414-92F6-12B982D3F732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F3E6D8-334F-4414-92F6-12B982D3F732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F3E6D8-334F-4414-92F6-12B982D3F732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F3E6D8-334F-4414-92F6-12B982D3F732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
