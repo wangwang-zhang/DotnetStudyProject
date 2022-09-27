@@ -25,4 +25,24 @@ public class LinqTest
         Assert.Equal(2, groupedResultLists.ToArray()[1].Key);
         Assert.Equal(3, groupedResultLists.ToArray()[2].Key);
     }
+
+    [Fact]
+    public void Should_Return_Correct_Results_Ordered_By_Age_From_Small_To_Big()
+    {
+        IList<Student> studentLists = new List<Student>()
+        {
+            new Student() { StudentID = 1, StudentName = "Amy", Age = 15, CourseID = 1 },
+            new Student() { StudentID = 2, StudentName = "Bob", Age = 16, CourseID = 1 },
+            new Student() { StudentID = 3, StudentName = "Cindy", Age = 15, CourseID = 2 },
+            new Student() { StudentID = 4, StudentName = "Dave", Age = 16, CourseID = 2 },
+            new Student() { StudentID = 5, StudentName = "Easton", Age = 16, CourseID = 3 },
+        };
+
+        var orderedResults = from student in studentLists
+            orderby student.Age, student.StudentName
+            select student.StudentName;
+        
+        var expectedStudentNameArray = new string[] { "Amy", "Cindy", "Bob", "Dave", "Easton" };
+        Assert.Equal(expectedStudentNameArray, orderedResults.ToArray());
+    }
 }
