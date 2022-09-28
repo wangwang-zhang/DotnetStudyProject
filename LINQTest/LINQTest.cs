@@ -28,15 +28,20 @@ public class LinqTest
     {
         var groupedResult = from student in _studentLists 
             group student by student.CourseID;
+        var groupedResultLinq = _studentLists.GroupBy(student => student.CourseID);
 
         IEnumerable<IGrouping<int,Student>> groupedResultLists = groupedResult.ToList();
+        IEnumerable<IGrouping<int,Student>> groupedResultListsLinq = groupedResultLinq.ToList();
         
         Assert.Equal(3, groupedResultLists.Count());
         Assert.Equal(1, groupedResultLists.ToArray()[0].Key);
         Assert.Equal(2, groupedResultLists.ToArray()[1].Key);
         Assert.Equal(3, groupedResultLists.ToArray()[2].Key);
+        Assert.Equal(3, groupedResultListsLinq.Count());
+        Assert.Equal(1, groupedResultListsLinq.ToArray()[0].Key);
+        Assert.Equal(2, groupedResultListsLinq.ToArray()[1].Key);
+        Assert.Equal(3, groupedResultListsLinq.ToArray()[2].Key);
     }
-
     [Fact]
     public void Should_Return_Correct_Results_Ordered_By_Age_From_Small_To_Big()
     {
