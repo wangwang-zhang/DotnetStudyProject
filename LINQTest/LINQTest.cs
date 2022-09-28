@@ -167,6 +167,13 @@ public class LinqTest
        var expectedResult =  _studentLists.All(student => student.Age is > 14 and < 17);
        Assert.True(expectedResult);
     }
+
+    [Fact]
+    public void Should_Return_True_When_Any_Student_Age_Is_Equal_To_15()
+    {
+        var expectedResult =  _studentLists.Any(student => student.Age is 15);
+        Assert.True(expectedResult);
+    }
 }
 
 public class StudentComparer : IEqualityComparer<Student>
