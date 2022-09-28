@@ -65,9 +65,11 @@ public class LinqTest
         var students = from student in _studentLists
             where student.Age == 15
             select student.StudentName;
-        
+        var studentsLinq = _studentLists.Where(student => student.Age == 15).Select(student => student.StudentName);
+
         var expectedStudentNameArray = new string[] { "Amy", "Cindy" };
         Assert.Equal(expectedStudentNameArray, students.ToArray());
+        Assert.Equal(expectedStudentNameArray, studentsLinq.ToArray());
     }
 
     [Fact]
