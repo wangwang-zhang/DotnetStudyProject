@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using LINQ;
+using Xunit.Abstractions;
 
 namespace LINQTest;
 
@@ -91,5 +92,29 @@ public class LinqTest
         Assert.Equal( "Easton", joinResults.ToArray()[4].StudentName);
         Assert.Equal( "English", joinResults.ToArray()[4].courseName);
 
+    }
+
+    private readonly ITestOutputHelper output;
+    public LinqTest(ITestOutputHelper output)
+    {
+        this.output = output;
+    }
+    
+    [Fact]
+    public void Should_Join_StudentLists_And_CourseLists_GroupBy_CourseID()
+    {
+        var groupJoinResults = _courseLists.GroupJoin(_studentLists,
+            course => course.CourseID,
+            student => student.CourseID,
+            (course, studentsGroup) => new
+            {
+                Students = studentsGroup,
+                courseName = course.CourseName
+            }
+        );
+
+        Assert.Equal("Math", groupJoinResults.ToArray()[0].courseName);
+        Assert.Equal(2, groupJoinResults.ToArray()[0].Students.Count());
+        Assert.Equal("Amy", groupJoinResults.ToArray()[0].Students.ToArray()[0].StudentName);
     }
 }
