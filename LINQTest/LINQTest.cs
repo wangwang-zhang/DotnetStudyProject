@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.ObjectModel;
 using LINQ;
 using Xunit.Abstractions;
@@ -133,5 +134,38 @@ public class LinqTest
     {
         int studentCount = _studentLists.Count(student => student.Age > 15);
         Assert.Equal(3, studentCount);
+    }
+
+    [Fact]
+    public void Should_Return_Distinct_StudentLists()
+    { 
+        IList<Student> studentLists = new List<Student>()
+        {
+            new Student() { StudentID = 1, StudentName = "Amy", Age = 15, CourseID = 1 },
+            new Student() { StudentID = 2, StudentName = "Bob", Age = 16, CourseID = 1 },
+            new Student() { StudentID = 3, StudentName = "Cindy", Age = 15, CourseID = 2 },
+            new Student() { StudentID = 4, StudentName = "Dave", Age = 16, CourseID = 2 },
+            new Student() { StudentID = 2, StudentName = "Bob", Age = 16, CourseID = 1 },
+            new Student() { StudentID = 3, StudentName = "Cindy", Age = 15, CourseID = 2 },
+        };
+        var distinctStudents = studentLists.Distinct(new StudentComparer());
+        
+        Assert.Equal(4, distinctStudents.Count());
+    }
+}
+
+public class StudentComparer : IEqualityComparer<Student>
+{
+    public bool Equals(Student studentFirst, Student studentSecond)
+    {
+        if (studentFirst.StudentID == studentSecond.StudentID 
+            && studentFirst.StudentName.ToLower() == studentSecond.StudentName.ToLower() )
+            return true;
+
+        return false;
+    }
+    public int GetHashCode(Student obj)
+    {
+        return obj.StudentID.GetHashCode();
     }
 }
