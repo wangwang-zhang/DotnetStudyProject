@@ -48,9 +48,13 @@ public class LinqTest
         var orderedResults = from student in _studentLists
             orderby student.Age, student.StudentName
             select student.StudentName;
-        
+
+        var orderedResultsLinq = _studentLists.OrderBy(student => student.Age)
+            .ThenBy(student => student.StudentName).Select(student => student.StudentName);
+
         var expectedStudentNameArray = new string[] { "Amy", "Cindy", "Bob", "Dave", "Easton" };
         Assert.Equal(expectedStudentNameArray, orderedResults.ToArray());
+        Assert.Equal(expectedStudentNameArray, orderedResultsLinq.ToArray());
     }
 
     [Fact] 
