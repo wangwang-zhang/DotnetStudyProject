@@ -141,9 +141,23 @@ public class LinqTest
             }
         );
 
+        var groupJoinResultsLinQ = from course in _courseLists
+            join student in _studentLists
+                on course.CourseID equals student.CourseID
+                into studentsGroup
+            select new
+            {
+                Students = studentsGroup,
+                courseName = course.CourseName
+            };
+
         Assert.Equal("Math", groupJoinResults.ToArray()[0].courseName);
         Assert.Equal(2, groupJoinResults.ToArray()[0].Students.Count());
         Assert.Equal("Amy", groupJoinResults.ToArray()[0].Students.ToArray()[0].StudentName);
+        
+        Assert.Equal("Math", groupJoinResultsLinQ.ToArray()[0].courseName);
+        Assert.Equal(2, groupJoinResultsLinQ.ToArray()[0].Students.Count());
+        Assert.Equal("Amy", groupJoinResultsLinQ.ToArray()[0].Students.ToArray()[0].StudentName);
     }
 
     [Fact]
