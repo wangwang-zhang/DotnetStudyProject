@@ -174,8 +174,15 @@ public class LinqTest
         var studentWithLongestName = from outerStudent in _studentLists
             where outerStudent.StudentName.Length == _studentLists.Max(innerStudent => innerStudent.StudentName.Length)
             select $"{outerStudent.StudentName}";
+
+        var studentWithLongestNameLinq = _studentLists
+            .Where(student => student.StudentName.Length ==
+                              _studentLists.Max(innerStudent => innerStudent.StudentName.Length))
+            .Select(student => $"{student.StudentName}");
+           
           
         Assert.Equal("Easton", studentWithLongestName.ToArray()[0].ToString());
+        Assert.Equal("Easton", studentWithLongestNameLinq.ToArray()[0].ToString());
     }
 
     [Fact]
