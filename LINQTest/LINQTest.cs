@@ -117,4 +117,14 @@ public class LinqTest
         Assert.Equal(2, groupJoinResults.ToArray()[0].Students.Count());
         Assert.Equal("Amy", groupJoinResults.ToArray()[0].Students.ToArray()[0].StudentName);
     }
+
+    [Fact]
+    public void Should_Return_Student_Whose_Name_Is_Longest()
+    {
+        var studentWithLongestName = from outerStudent in _studentLists
+            where outerStudent.StudentName.Length == _studentLists.Max(innerStudent => innerStudent.StudentName.Length)
+            select $"{outerStudent.StudentName}";
+          
+        Assert.Equal("Easton", studentWithLongestName.ToArray()[0].ToString());
+    }
 }
