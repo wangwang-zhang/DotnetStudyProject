@@ -85,20 +85,40 @@ public class LinqTest
                 on student.CourseID equals course.CourseID
             select new
             {
-                student.StudentName,
+                studentName = student.StudentName,
                 courseName = course.CourseName
             };
-        
-        Assert.Equal( "Amy", joinResults.ToArray()[0].StudentName);
+        var joinResultsLinq = _studentLists.Join(
+            _courseLists,
+            student => student.CourseID,
+            course => course.CourseID,
+            (student, course) => new
+            {
+                studentName = student.StudentName,
+                courseName = course.CourseName
+            });
+
+        Assert.Equal( "Amy", joinResults.ToArray()[0].studentName);
         Assert.Equal( "Math", joinResults.ToArray()[0].courseName);
-        Assert.Equal( "Bob", joinResults.ToArray()[1].StudentName);
+        Assert.Equal( "Bob", joinResults.ToArray()[1].studentName);
         Assert.Equal( "Math", joinResults.ToArray()[1].courseName);
-        Assert.Equal( "Cindy", joinResults.ToArray()[2].StudentName);
+        Assert.Equal( "Cindy", joinResults.ToArray()[2].studentName);
         Assert.Equal( "Biology", joinResults.ToArray()[2].courseName);
-        Assert.Equal( "Dave", joinResults.ToArray()[3].StudentName);
+        Assert.Equal( "Dave", joinResults.ToArray()[3].studentName);
         Assert.Equal( "Biology", joinResults.ToArray()[3].courseName);
-        Assert.Equal( "Easton", joinResults.ToArray()[4].StudentName);
+        Assert.Equal( "Easton", joinResults.ToArray()[4].studentName);
         Assert.Equal( "English", joinResults.ToArray()[4].courseName);
+        
+        Assert.Equal( "Amy", joinResultsLinq.ToArray()[0].studentName);
+        Assert.Equal( "Math", joinResultsLinq.ToArray()[0].courseName);
+        Assert.Equal( "Bob", joinResultsLinq.ToArray()[1].studentName);
+        Assert.Equal( "Math", joinResultsLinq.ToArray()[1].courseName);
+        Assert.Equal( "Cindy", joinResultsLinq.ToArray()[2].studentName);
+        Assert.Equal( "Biology", joinResultsLinq.ToArray()[2].courseName);
+        Assert.Equal( "Dave", joinResultsLinq.ToArray()[3].studentName);
+        Assert.Equal( "Biology", joinResultsLinq.ToArray()[3].courseName);
+        Assert.Equal( "Easton", joinResultsLinq.ToArray()[4].studentName);
+        Assert.Equal( "English", joinResultsLinq.ToArray()[4].courseName);
 
     }
 
