@@ -160,6 +160,13 @@ public class LinqTest
         Assert.Equal("Math", firstCourse.CourseName);
         Assert.Equal(1, firstCourse.CourseID);
     }
+
+    [Fact]
+    public void Should_Return_True_When_ALL_Is_Between_14_and_17()
+    {
+       var expectedResult =  _studentLists.All(student => student.Age is > 14 and < 17);
+       Assert.True(expectedResult);
+    }
 }
 
 public class StudentComparer : IEqualityComparer<Student>
