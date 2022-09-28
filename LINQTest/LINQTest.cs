@@ -127,4 +127,11 @@ public class LinqTest
           
         Assert.Equal("Easton", studentWithLongestName.ToArray()[0].ToString());
     }
+
+    [Fact]
+    public void Should_Return_Correct_Count_Of_Students_Whose_Age_Is_Bigger_Than_15()
+    {
+        int studentCount = _studentLists.Count(student => student.Age > 15);
+        Assert.Equal(3, studentCount);
+    }
 }
