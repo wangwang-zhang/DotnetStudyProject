@@ -152,6 +152,14 @@ public class LinqTest
         
         Assert.Equal(4, distinctStudents.Count());
     }
+
+    [Fact]
+    public void Should_Return_First_Course()
+    {
+        Course? firstCourse = _courseLists.FirstOrDefault();
+        Assert.Equal("Math", firstCourse.CourseName);
+        Assert.Equal(1, firstCourse.CourseID);
+    }
 }
 
 public class StudentComparer : IEqualityComparer<Student>
