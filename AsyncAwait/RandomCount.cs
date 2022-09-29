@@ -8,7 +8,17 @@ public static class RandomCount
 	
     public static async Task Main(string[] args)
     {
-       
+        Console.WriteLine("Please input the number of count-off:");
+        _number = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("-------------------");
+        
+        var tasks = new List<Task>();
+        
+        for (var i = 1; i <= _number; i++)
+        {
+            tasks.Add(PrintNumber(i));
+        }
+        await Task.WhenAll(tasks);
     }
 
     public static async Task PrintNumber(int number)
@@ -26,10 +36,10 @@ public static class RandomCount
        _count = resultNumber;
     }
 	
-    public static async Task<int> GetNumber(int number)
+    public static async Task<int> GetNumber(int i)
     {
         Random random = new Random(); 
         await Task.Delay(random.Next(0,1000));
-        return number;
+        return i;
     }
 }
