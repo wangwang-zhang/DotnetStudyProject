@@ -13,5 +13,7 @@
     &lt;TestId&gt;xUnit::69F3E6D8-334F-4414-92F6-12B982D3F732::net6.0::LINQTest.LINQTest.Should_Return_Correct_Results_GroupBy_Age&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::69F3E6D8-334F-4414-92F6-12B982D3F732::net6.0::LINQTest.LinqTest.Should_Return_Correct_Results_Ordered_By_Age_From_Small_To_Big&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::69F3E6D8-334F-4414-92F6-12B982D3F732::net6.0::LINQTest.LinqTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::F1700C12-7D4B-4E0C-B097-9AB90017DDBC::net6.0::AsyncAwaitTest.AsyncAwaitTest.Should_Return_Correct_Task_Int&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::F1700C12-7D4B-4E0C-B097-9AB90017DDBC::net6.0::AsyncAwaitTest.AsyncAwaitTest.Should_Return_Correct_Value&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
